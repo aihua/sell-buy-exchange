@@ -1,4 +1,4 @@
-package com.exchange.buy.sell.market.security;
+package com.exchange.buy.sell.registration.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

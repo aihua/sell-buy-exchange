@@ -1,4 +1,4 @@
-package com.exchange.buy.sell.market.service;
+package com.exchange.buy.sell.registration.service;
 
 /**
  * Created by oleht on 22.07.2018

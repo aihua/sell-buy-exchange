@@ -1,4 +1,4 @@
-package com.exchange.buy.sell.market.exception;
+package com.exchange.buy.sell.registration.exception;
 
 /**
  * Created by oleht on 11.07.2018

@@ -3,7 +3,7 @@ package com.exchange.buy.sell.market.service;
 import com.exchange.buy.sell.market.domain.UserEntity;
 import com.exchange.buy.sell.market.domain.VerificationToken;
 import com.exchange.buy.sell.market.dto.UserDto;
-import com.exchange.buy.sell.market.exception.EmailExistsException;
+import com.exchange.buy.sell.registration.exception.EmailExistsException;
 
 /**
  * Created by oleht on 13.07.2018

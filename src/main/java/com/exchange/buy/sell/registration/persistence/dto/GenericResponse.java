@@ -1,4 +1,4 @@
-package com.exchange.buy.sell.market.utils;
+package com.exchange.buy.sell.registration.persistence.dto;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

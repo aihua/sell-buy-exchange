@@ -1,8 +1,8 @@
 package com.exchange.buy.sell.registration.handler;
 
-import com.exchange.buy.sell.market.exception.UserAlreadyExistException;
-import com.exchange.buy.sell.market.exception.UserNotFoundException;
-import com.exchange.buy.sell.market.utils.GenericResponse;
+import com.exchange.buy.sell.registration.exception.UserAlreadyExistException;
+import com.exchange.buy.sell.registration.exception.UserNotFoundException;
+import com.exchange.buy.sell.registration.persistence.dto.GenericResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.MessageSource;
 import org.springframework.http.HttpHeaders;

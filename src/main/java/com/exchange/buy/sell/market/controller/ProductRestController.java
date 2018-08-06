@@ -1,7 +1,8 @@
-package com.exchange.buy.sell.market.service;
+package com.exchange.buy.sell.market.controller;
 
 import com.exchange.buy.sell.market.dto.ProductDto;
-import com.exchange.buy.sell.market.exception.MyResourceNotFoundException;
+import com.exchange.buy.sell.market.service.ProductService;
+import com.exchange.buy.sell.registration.exception.MyResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by oleht on 14.05.2018
  */
 @RestController
-public class ProductRestService {
+public class ProductRestController {
 
     @Autowired
     private ProductService productService;

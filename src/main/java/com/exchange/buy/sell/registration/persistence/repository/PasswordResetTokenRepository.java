@@ -1,4 +1,4 @@
-package com.exchange.buy.sell.market.repository;
+package com.exchange.buy.sell.registration.persistence.repository;
 
 import com.exchange.buy.sell.market.domain.PasswordResetToken;
 import com.exchange.buy.sell.market.domain.UserEntity;

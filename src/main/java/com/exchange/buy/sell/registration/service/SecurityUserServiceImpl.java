@@ -1,8 +1,8 @@
-package com.exchange.buy.sell.market.service;
+package com.exchange.buy.sell.registration.service;
 
 import com.exchange.buy.sell.market.domain.PasswordResetToken;
 import com.exchange.buy.sell.market.domain.UserEntity;
-import com.exchange.buy.sell.market.repository.PasswordResetTokenRepository;
+import com.exchange.buy.sell.registration.persistence.repository.PasswordResetTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;

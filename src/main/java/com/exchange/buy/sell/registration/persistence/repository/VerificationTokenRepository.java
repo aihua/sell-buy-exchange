@@ -1,4 +1,4 @@
-package com.exchange.buy.sell.registration.repository;
+package com.exchange.buy.sell.registration.persistence.repository;
 
 import com.exchange.buy.sell.market.domain.UserEntity;
 import com.exchange.buy.sell.market.domain.VerificationToken;

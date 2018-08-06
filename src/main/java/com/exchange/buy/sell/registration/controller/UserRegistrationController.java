@@ -1,4 +1,4 @@
-package com.exchange.buy.sell.market.controller;
+package com.exchange.buy.sell.registration.controller;
 
 import com.exchange.buy.sell.market.domain.Privilege;
 import com.exchange.buy.sell.market.domain.Role;
@@ -6,13 +6,13 @@ import com.exchange.buy.sell.market.domain.UserEntity;
 import com.exchange.buy.sell.market.domain.VerificationToken;
 import com.exchange.buy.sell.market.dto.PasswordDto;
 import com.exchange.buy.sell.market.dto.UserDto;
-import com.exchange.buy.sell.market.exception.EmailExistsException;
-import com.exchange.buy.sell.market.exception.InvalidOldPasswordException;
-import com.exchange.buy.sell.market.exception.UserAlreadyExistException;
-import com.exchange.buy.sell.market.exception.UserNotFoundException;
-import com.exchange.buy.sell.market.service.SecurityUserService;
+import com.exchange.buy.sell.registration.exception.EmailExistsException;
+import com.exchange.buy.sell.registration.exception.InvalidOldPasswordException;
+import com.exchange.buy.sell.registration.exception.UserAlreadyExistException;
+import com.exchange.buy.sell.registration.exception.UserNotFoundException;
+import com.exchange.buy.sell.registration.service.SecurityUserService;
 import com.exchange.buy.sell.market.service.UserService;
-import com.exchange.buy.sell.market.utils.GenericResponse;
+import com.exchange.buy.sell.registration.persistence.dto.GenericResponse;
 import com.exchange.buy.sell.registration.event.OnRegistrationCompleteEvent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
@@ -42,7 +42,7 @@ import java.util.stream.Collectors;
  * Created by oleht on 13.07.2018
  */
 @RestController
-public class UserController {
+public class UserRegistrationController {
 
     @Autowired
     private UserService userService;
