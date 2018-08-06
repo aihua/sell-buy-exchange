@@ -1,6 +1,7 @@
 package com.exchange.buy.sell.market.domain;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.List;
 
 /**
@@ -30,7 +31,26 @@ public class UserEntity extends AbstractEntity<Long> {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
     private List<ProductEntity> markedProducts;
 
-    private List<String> roles;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
+    private Collection<Role> roles;
+
+    @Column(name = "enabled")
+    private boolean enabled;
+
+    public UserEntity() {
+        super();
+        this.enabled = false;
+    }
+
+    public boolean isEnabled() {
+
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -97,11 +117,11 @@ public class UserEntity extends AbstractEntity<Long> {
     }
 
 
-    public List<String> getRoles() {
+    public Collection<Role> getRoles() {
         return roles;
     }
 
-    public void setRoles(List<String> roles) {
+    public void setRoles(Collection<Role> roles) {
         this.roles = roles;
     }
 }

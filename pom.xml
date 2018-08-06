@@ -6,9 +6,10 @@
 	<groupId>com.exchange.buy.sell</groupId>
 	<artifactId>sell-buy-exchange</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>jar</packaging>
 
-	<firstName>sell-buy-exchange</firstName>
+	<packaging>pom</packaging>
+
+	<name>sell-buy-exchange</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -22,6 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>8</java.version>
+		<passay.version>1.0</passay.version>
 	</properties>
 
 	<dependencies>
@@ -41,7 +43,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
@@ -72,6 +77,21 @@
 			<artifactId>bootstrap</artifactId>
 			<version>3.3.7-1</version>
 		</dependency>
+
+		<!-- Password Validation -->
+
+		<dependency>
+			<groupId>org.passay</groupId>
+			<artifactId>passay</artifactId>
+			<version>${passay.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>21.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>
@@ -115,7 +135,7 @@
 	<repositories>
 		<repository>
 			<id>spring-snapshots</id>
-			<firstName>Spring Snapshots</firstName>
+			<name>Spring Snapshots</name>
 			<url>https://repo.spring.io/snapshot</url>
 			<snapshots>
 				<enabled>true</enabled>
@@ -123,7 +143,7 @@
 		</repository>
 		<repository>
 			<id>spring-milestones</id>
-			<firstName>Spring Milestones</firstName>
+			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
 			<snapshots>
 				<enabled>false</enabled>
@@ -134,7 +154,7 @@
 	<pluginRepositories>
 		<pluginRepository>
 			<id>spring-snapshots</id>
-			<firstName>Spring Snapshots</firstName>
+			<name>Spring Snapshots</name>
 			<url>https://repo.spring.io/snapshot</url>
 			<snapshots>
 				<enabled>true</enabled>
@@ -142,7 +162,7 @@
 		</pluginRepository>
 		<pluginRepository>
 			<id>spring-milestones</id>
-			<firstName>Spring Milestones</firstName>
+			<name>Spring Milestones</name>
 			<url>https://repo.spring.io/milestone</url>
 			<snapshots>
 				<enabled>false</enabled>

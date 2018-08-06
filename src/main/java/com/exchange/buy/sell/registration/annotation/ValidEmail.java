@@ -1,6 +1,6 @@
-package com.exchange.buy.sell.market.annotation;
+package com.exchange.buy.sell.registration.annotation;
 
-import com.exchange.buy.sell.market.validator.EmailValidator;
+import com.exchange.buy.sell.registration.validator.EmailValidator;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

@@ -1,47 +1,45 @@
 package com.exchange.buy.sell.market.domain;
 
-import com.exchange.buy.sell.market.domain.AbstractEntity;
-import com.exchange.buy.sell.market.domain.UserEntity;
-
 import javax.persistence.*;
-import java.sql.Date;
-import java.sql.Timestamp;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
- * Created by oleht on 13.07.2018
+ * Created by oleht on 22.07.2018
  */
 @Entity
-public class VerificationToken extends AbstractEntity<Long> {
+public class PasswordResetToken extends AbstractEntity<Long> {
 
     private static final int EXPIRATION = 60 * 24;
 
     private String token;
 
     @OneToOne(targetEntity = UserEntity.class, fetch = FetchType.EAGER)
-    @JoinColumn(nullable = false, name = "user_id", foreignKey = @ForeignKey(name = "FK_VERIFY_USER"))
+    @JoinColumn(nullable = false, name = "user_id")
     private UserEntity user;
 
-    private java.util.Date expiryDate;
+    private Date expiryDate;
 
-    public VerificationToken() {
+    public PasswordResetToken() {
         super();
     }
 
-    public VerificationToken(final String token) {
+    public PasswordResetToken(final String token) {
         super();
 
         this.token = token;
         this.expiryDate = calculateExpiryDate(EXPIRATION);
     }
 
-    public VerificationToken(final String token, final UserEntity user) {
+    public PasswordResetToken(final String token, final UserEntity user) {
         super();
 
         this.token = token;
         this.user = user;
         this.expiryDate = calculateExpiryDate(EXPIRATION);
     }
+
+    //
 
     public String getToken() {
         return token;
@@ -59,19 +57,19 @@ public class VerificationToken extends AbstractEntity<Long> {
         this.user = user;
     }
 
-    public java.util.Date getExpiryDate() {
+    public Date getExpiryDate() {
         return expiryDate;
     }
 
-    public void setExpiryDate(final java.util.Date expiryDate) {
+    public void setExpiryDate(final Date expiryDate) {
         this.expiryDate = expiryDate;
     }
 
-    private java.util.Date calculateExpiryDate(final int expiryTimeInMinutes) {
+    private Date calculateExpiryDate(final int expiryTimeInMinutes) {
         final Calendar cal = Calendar.getInstance();
-        cal.setTimeInMillis(new java.util.Date().getTime());
+        cal.setTimeInMillis(new Date().getTime());
         cal.add(Calendar.MINUTE, expiryTimeInMinutes);
-        return new java.util.Date(cal.getTime().getTime());
+        return new Date(cal.getTime().getTime());
     }
 
     public void updateToken(final String token) {
@@ -102,7 +100,7 @@ public class VerificationToken extends AbstractEntity<Long> {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final VerificationToken other = (VerificationToken) obj;
+        final PasswordResetToken other = (PasswordResetToken) obj;
         if (expiryDate == null) {
             if (other.expiryDate != null) {
                 return false;
@@ -133,5 +131,4 @@ public class VerificationToken extends AbstractEntity<Long> {
         builder.append("Token [String=").append(token).append("]").append("[Expires").append(expiryDate).append("]");
         return builder.toString();
     }
-
 }

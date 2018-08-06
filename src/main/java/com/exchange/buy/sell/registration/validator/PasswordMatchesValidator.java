@@ -1,6 +1,6 @@
-package com.exchange.buy.sell.market.validator;
+package com.exchange.buy.sell.registration.validator;
 
-import com.exchange.buy.sell.market.annotation.PasswordMatches;
+import com.exchange.buy.sell.registration.annotation.PasswordMatches;
 import com.exchange.buy.sell.market.dto.UserDto;
 
 import javax.validation.ConstraintValidator;

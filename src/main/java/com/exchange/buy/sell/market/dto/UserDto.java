@@ -1,7 +1,7 @@
 package com.exchange.buy.sell.market.dto;
 
-import com.exchange.buy.sell.market.annotation.PasswordMatches;
-import com.exchange.buy.sell.market.annotation.ValidEmail;
+import com.exchange.buy.sell.registration.annotation.PasswordMatches;
+import com.exchange.buy.sell.registration.annotation.ValidEmail;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;

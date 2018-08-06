@@ -18,7 +18,6 @@ import java.util.List;
 //        discriminatorType = DiscriminatorType.STRING)
 public class ProductEntity extends AbstractEntity<Long> {
 
-    @Column(name = "owner")
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private UserEntity user;
 

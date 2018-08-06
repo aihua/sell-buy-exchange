@@ -1,10 +1,12 @@
 package com.exchange.buy.sell.market.domain;
 
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.Date;
+
+import static javax.persistence.TemporalType.TIMESTAMP;
 
 /**
  * Created by oleht on 11.05.2018
@@ -16,11 +18,13 @@ public class AbstractEntity <T extends Number> {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private T id;
 
-    @CreationTimestamp
-    private Timestamp creationDate;
+    @CreatedDate
+    @Temporal(TIMESTAMP)
+    private Date creationDate;
 
-    @UpdateTimestamp
-    private Timestamp lastModificationDate;
+    @LastModifiedDate
+    @Temporal(TIMESTAMP)
+    private Date lastModificationDate;
 
     public T getId() {
         return id;
@@ -30,19 +34,19 @@ public class AbstractEntity <T extends Number> {
         this.id = id;
     }
 
-    public Timestamp getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
-    public void setCreationDate(Timestamp creationDate) {
+    public void setCreationDate(Date creationDate) {
         this.creationDate = creationDate;
     }
 
-    public Timestamp getLastModificationDate() {
+    public Date getLastModificationDate() {
         return lastModificationDate;
     }
 
-    public void setLastModificationDate(Timestamp lastModificationDate) {
+    public void setLastModificationDate(Date lastModificationDate) {
         this.lastModificationDate = lastModificationDate;
     }
 }
